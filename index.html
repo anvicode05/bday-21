@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>21 Things That Make You, You</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Parisienne&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="hero">
+    <div class="polaroid polaroid-left">
+      <img src="images/photo1.jpg" alt="Us together" />
+      <p>my favourite person ♡</p>
+    </div>
+
+    <div class="hero-text">
+      <p class="eyebrow">HAPPY 21ST, BESTIE ♡</p>
+      <h1>21 Things</h1>
+      <h2>that make you, you</h2>
+      <p class="hero-note">
+        A little reminder of how iconic you are and all the reasons
+        I’m so lucky to have you.
+      </p>
+      <button id="startButton">click a card to open →</button>
+    </div>
+
+    <div class="polaroid polaroid-right">
+      <img src="images/photo2.jpg" alt="Cafe memory" />
+      <p>cafés + chaos = us</p>
+    </div>
+  </header>
+
+  <main>
+    <p class="instruction">♡ click on a card to open each little memory ♡</p>
+
+    <section class="card-grid" id="cardGrid">
+      <!-- Cards are added by script.js -->
+    </section>
+  </main>
+
+  <!-- Popup that opens when a card is clicked -->
+  <div class="modal" id="modal">
+    <div class="modal-box">
+      <button class="close-btn" id="closeButton">×</button>
+      <p class="modal-number" id="modalNumber"></p>
+      <img class="modal-image" id="modalImage" src="" alt="" />
+      <h2 id="modalTitle"></h2>
+      <p id="modalText"></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>Here’s to more café dates, auto rides, late-night talks, and memories.</p>
+    <h2>Happy 21st, my favourite girl ♡</h2>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+<div class="birthday-popup" id="birthdayPopup">
+    <div class="birthday-box">
+      <span class="flower flower-one">✿</span>
+      <span class="flower flower-two">❀</span>
+      <span class="heart heart-one">♡</span>
+      <span class="heart heart-two">♡</span>
+  
+      <p class="popup-small">HAPPY BIRTHDAY ♡</p>
+  
+      <h2>
+        Happy 21st,
+        <span>my favourite girl</span>
+      </h2>
+  
+      <p class="popup-text">
+        A little collection of all the things that make you completely you.
+      </p>
+  
+     
+      <button id="openSurprise" type="button">open my surprise →</button>
+    </div>
+
+</div>
+</html>

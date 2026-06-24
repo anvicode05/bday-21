@@ -1,0 +1,431 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background: #f6f0e8;
+    color: #34261e;
+    font-family: "DM Sans", sans-serif;
+  }
+  
+  .hero {
+    min-height: 500px;
+    padding: 65px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 55px;
+    overflow: hidden;
+    background: #eee3d7;
+  }
+  
+  .hero-text {
+    text-align: center;
+    max-width: 550px;
+  }
+  
+  .eyebrow,
+  .instruction {
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 600;
+  }
+  
+  .eyebrow {
+    margin-bottom: 16px;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    font-family: "Cormorant Garamond", serif;
+  }
+  
+  .hero h1 {
+    font-size: clamp(62px, 8vw, 100px);
+    line-height: 0.8;
+    font-weight: 600;
+  }
+  
+  .hero h2 {
+    font-family: "Parisienne", cursive;
+    font-size: clamp(42px, 5vw, 65px);
+    font-weight: 400;
+    margin: 16px 0 25px;
+  }
+  
+  .hero-note {
+    max-width: 390px;
+    margin: auto;
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  
+  #startButton {
+    margin-top: 25px;
+    padding: 13px 23px;
+    border: 0;
+    background: #4b2e1e;
+    color: #fffaf5;
+    border-radius: 3px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 11px;
+  }
+  
+  .polaroid {
+    width: 205px;
+    background: #fffdf9;
+    padding: 10px 10px 18px;
+    box-shadow: 0 12px 28px rgba(55, 35, 20, 0.16);
+  }
+  
+  .polaroid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+  
+  .polaroid p {
+    margin-top: 10px;
+    text-align: center;
+    font-family: "Parisienne", cursive;
+    font-size: 21px;
+  }
+  
+  .polaroid-left {
+    transform: rotate(-5deg);
+  }
+  
+  .polaroid-right {
+    transform: rotate(5deg);
+  }
+  
+  main {
+    padding: 55px 7% 80px;
+  }
+  
+  .instruction {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+  }
+  
+  .memory-card {
+    min-height: 205px;
+    background: #fffaf5;
+    border: 1px solid #e2d4c6;
+    border-radius: 9px;
+    padding: 18px;
+    text-align: left;
+    cursor: pointer;
+    color: #34261e;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .memory-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(72, 44, 27, 0.12);
+  }
+  
+  .card-number {
+    display: block;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 31px;
+    margin-bottom: 15px;
+  }
+  
+  .memory-card h3 {
+    font-size: 27px;
+    line-height: 0.95;
+    margin-bottom: 20px;
+  }
+  
+  .memory-card p {
+    margin-top: auto;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  .memory-card img {
+    width: 100%;
+    height: 92px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin: -3px 0 10px;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    background: rgba(40, 27, 20, 0.55);
+    padding: 25px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal.show {
+    display: flex;
+  }
+  
+  .modal-box {
+    width: min(480px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    background: #fffaf5;
+    padding: 45px 38px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 17px;
+    border: 0;
+    background: transparent;
+    font-size: 30px;
+    cursor: pointer;
+    color: #34261e;
+  }
+  
+  .modal-number {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+  
+  .modal-box h2 {
+    font-size: 46px;
+    line-height: 0.95;
+    margin-bottom: 18px;
+  }
+  
+  .modal-box p {
+    line-height: 1.8;
+    font-size: 15px;
+  }
+  
+  .modal-image {
+    display: none;
+    width: 100%;
+    max-height: 270px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 22px;
+  }
+  
+  footer {
+    background: #4b2e1e;
+    color: #fffaf5;
+    text-align: center;
+    padding: 60px 20px;
+  }
+  
+  footer p {
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+  
+  footer h2 {
+    font-family: "Parisienne", cursive;
+    font-size: 40px;
+    font-weight: 400;
+  }
+  
+  @media (max-width: 1000px) {
+    .card-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .hero {
+      padding: 55px 6%;
+      gap: 15px;
+    }
+  
+    .polaroid {
+      display: none;
+    }
+  
+    .card-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    main {
+      padding: 45px 5%;
+    }
+  }
+  
+  @media (max-width: 430px) {
+    .card-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .birthday-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(53, 35, 25, 0.55);
+    backdrop-filter: blur(4px);
+  }
+  
+  .birthday-popup.hidden {
+    display: none;
+  }
+  
+  .birthday-box {
+    width: min(470px, 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 42px 42px 36px;
+    text-align: center;
+    background: #fffaf5;
+    border-radius: 18px;
+    box-shadow: 0 20px 55px rgba(30, 20, 15, 0.3);
+  }
+  
+  .popup-small {
+    margin-bottom: 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+  }
+  
+  .birthday-box h2 {
+    margin-bottom: 18px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(46px, 6vw, 60px);
+    line-height: 0.9;
+    color: #34261e;
+  }
+  
+  .birthday-box h2 span {
+    display: block;
+    margin-top: 8px;
+    font-family: "Parisienne", cursive;
+    font-size: 0.72em;
+    font-weight: 400;
+  }
+  
+  .popup-text {
+    max-width: 320px;
+    margin: 0 auto;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+  
+  .cake {
+    width: 92px;
+    height: 54px;
+    position: relative;
+    margin: 25px auto 18px;
+    border-radius: 8px 8px 12px 12px;
+    background: #d8a58f;
+    border-bottom: 7px solid #b97963;
+  }
+  
+  .cake::before {
+    content: "";
+    position: absolute;
+    top: -14px;
+    left: 0;
+    width: 92px;
+    height: 20px;
+    border-radius: 50%;
+    background: #f7e5d8;
+    box-shadow:
+      12px 7px 0 -2px #f7e5d8,
+      30px 5px 0 -2px #f7e5d8,
+      48px 7px 0 -2px #f7e5d8,
+      68px 5px 0 -2px #f7e5d8;
+  }
+  
+  .cake::after {
+    content: "♡  ♡  ♡";
+    position: absolute;
+    top: -42px;
+    left: 8px;
+    color: #b97963;
+    font-size: 18px;
+    letter-spacing: 5px;
+  }
+  
+  .birthday-box button {
+    position: relative;
+    z-index: 2;
+    margin-top: 4px;
+    padding: 14px 24px;
+    border: 0;
+    border-radius: 4px;
+    background: #4b2e1e;
+    color: #fffaf5;
+    cursor: pointer;
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+  }
+  
+  .birthday-box button:hover {
+    background: #342018;
+  }
+  
+  .flower,
+  .heart {
+    position: absolute;
+    color: #bd8b72;
+    pointer-events: none;
+  }
+  
+  .flower {
+    font-size: 42px;
+  }
+  
+  .flower-one {
+    top: 40px;
+    left: 28px;
+    transform: rotate(-20deg);
+  }
+  
+  .flower-two {
+    right: 30px;
+    bottom: 90px;
+    font-size: 34px;
+    transform: rotate(18deg);
+  }
+  
+  .heart {
+    font-size: 28px;
+  }
+  
+  .heart-one {
+    top: 125px;
+    right: 38px;
+  }
+  
+  .heart-two {
+    left: 48px;
+    bottom: 115px;
+  }
